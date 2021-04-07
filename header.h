@@ -9,5 +9,16 @@ extern int numLetters;
 typedef struct lettersCoding codeLet;
 
 codeLet *generateLegend(const char *filename);
-void findPossibilities(char strArray[]);
-void checkPossibility(int position, char string[], const codeLet *legend, int key);
+
+void findPosibilities(codeLet *legend, char *decodedLetters, char *leftToDecode, codeLet letterToCheck);
+
+struct lettersCoding {
+    char letter;
+    char code[MAX_CODE_LEN];
+};
+
+struct results {
+    int count;
+    char strings[MAX_POSSIB][MAX_STRING_LEN];
+} possibilities;
+
