@@ -9,5 +9,5 @@ extern int numLetters;
 typedef struct lettersCoding codeLet;
 
 codeLet *generateLegend(const char *filename);
-void findPossibilities(const codeLet *legend);
+void findPossibilities(char strArray[]);
 void checkPossibility(int position, char string[], const codeLet *legend, int key);

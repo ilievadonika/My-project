@@ -53,13 +53,33 @@ codeLet *generateLegend(const char *filename) {
     return legend;
 }
 
-void findPossibilities(const codeLet *legend) {
-    for (int i = 0; i < numLetters; i++) {
-        checkPossibility(0, "", legend, i);
+void findPosibillities(char strArray[MAX_STRING_LEN]) {
+    int i, j, k;
+    int len = strlen(strArray);
+
+    for (i = 0; i < len - 1; i++) {
+        for (j = i + 1; j < len; j++) {
+            /*for (k = j + 1; k < len; k++)*/
+               printf("%c%c\n", strArray[i], strArray[j]);
+        }
     }
 }
 
-void checkPossibility(int position, char string[], const codeLet *legend, int key) {
+
+
+
+
+
+
+
+
+/*void findPossibilities(const codeLet *legend) {
+    for (int i = 0; i < numLetters; i++) {
+        checkPossibility(0, "", legend, i);
+    }
+}*/
+
+/*void checkPossibility(int position, char string[], const codeLet *legend, int key) {
     if (position == lenStrArray) {
         possibilities.count++;
         strcpy(possibilities.str[possibilities.count], string);
@@ -77,10 +97,8 @@ void checkPossibility(int position, char string[], const codeLet *legend, int ke
             checkPossibility(position + strlen(legend[key].code), temp, legend, i);
         }
     }
+} */
 
-    
-    // лека
-    // 
     /* strArray + position "110001\0" from position */
     /* (a) 110 */
     /* strncmp next n chars in strArray */
@@ -88,5 +106,30 @@ void checkPossibility(int position, char string[], const codeLet *legend, int ke
         /* if we reach end, possibilities.count ++ */
             /* and add string to possibilities.str */
     //int strcmp(const char *str1, const char *str2)
-}
 //
+
+/* 
+in: 110001
+
+0:  a001 -> ad
+1:  b0001 -> bc001
+2:  ad
+3:  bc001 -> bcc01, bcd
+4:  bcc01 -> no
+5:  bcd
+6:  
+7:  
+8:  
+9:  
+
+temp = 110001
+       a? - y
+       001
+       a? - n
+       b? - n
+       c? - y
+       01
+
+
+
+ */
